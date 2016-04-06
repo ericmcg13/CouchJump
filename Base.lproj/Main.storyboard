@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MainPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="CouchJump" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="MainPage" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.99111585098368959" green="1" blue="0.98964744427192686" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <segue destination="bsO-gx-OkY" kind="presentation" identifier="showClickPhoto" id="2zn-he-x04"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="507" y="225"/>
+        </scene>
+        <!--Click Image View Controller-->
+        <scene sceneID="I2A-WR-Xj3">
+            <objects>
+                <viewController storyboardIdentifier="ClickImageViewController" autoresizesArchivedViewToFullSize="NO" id="bsO-gx-OkY" customClass="ClickImageViewController" customModule="CouchJump" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vu5-PH-GP5"/>
+                        <viewControllerLayoutGuide type="bottom" id="47b-m4-Mgw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wTT-DJ-VVM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="4gh-M3-nb3">
+                                <rect key="frame" x="20" y="43" width="374" height="290"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="1sd-Jt-1IB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1sd-Jt-1IB"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fjQ-cR-Zmb">
+                                <rect key="frame" x="20" y="403" width="374" height="333"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.1210542929" green="0.1210542929" blue="0.1210542929" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="ClickUserName" id="lJA-gw-Kb5">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJA-gw-Kb5" id="jTz-Hg-PbW">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="tintColor" red="0.1210542929" green="0.1210542929" blue="0.1210542929" alpha="1" colorSpace="calibratedRGB"/>
+                                        </tableViewCellContentView>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bsO-gx-OkY" id="hVt-Oi-rO9"/>
+                                    <outlet property="delegate" destination="bsO-gx-OkY" id="Mud-EJ-nDN"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzj-6V-7Qy">
+                                <rect key="frame" x="279" y="343" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.12549019607843137" green="0.69411764705882351" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="svd-HV-kw8"/>
+                                    <constraint firstAttribute="height" constant="50" id="wVb-Ux-flc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                <state key="normal" title="send">
+                                    <color key="titleColor" red="0.99111585099999999" green="1" blue="0.98964744429999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="10" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendBtnAction:" destination="bsO-gx-OkY" eventType="touchUpInside" id="7Sp-mX-dop"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="click: send a photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8T-W1-R2i">
+                                <rect key="frame" x="30" y="10" width="146" height="23"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dta-zK-dau">
+                                <rect key="frame" x="364" y="10" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.70980392160000005" green="0.039215686270000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9Vn-DP-zY0"/>
+                                    <constraint firstAttribute="width" constant="30" id="E5L-1f-xMY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="closeVCAction:" destination="bsO-gx-OkY" eventType="touchUpInside" id="pwp-Ti-lQg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANT-E6-Cbx">
+                                <rect key="frame" x="35" y="343" width="100" height="50"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2pM-Eq-eh4"/>
+                                    <constraint firstAttribute="width" constant="100" id="5wG-lc-oC9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                <color key="tintColor" red="0.99111585099999999" green="1" blue="0.98964744429999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="select image">
+                                    <color key="titleColor" red="0.99111585099999999" green="1" blue="0.98964744429999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectImageAction:" destination="bsO-gx-OkY" eventType="touchUpInside" id="ibZ-P2-jsa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s8T-W1-R2i" firstAttribute="leading" secondItem="wTT-DJ-VVM" secondAttribute="leadingMargin" constant="10" id="9zW-Sw-YfC"/>
+                            <constraint firstItem="Vzj-6V-7Qy" firstAttribute="centerY" secondItem="wTT-DJ-VVM" secondAttribute="centerY" id="Dn6-tl-mNR"/>
+                            <constraint firstItem="4gh-M3-nb3" firstAttribute="trailing" secondItem="wTT-DJ-VVM" secondAttribute="trailingMargin" id="FTC-Ow-hbs"/>
+                            <constraint firstItem="ANT-E6-Cbx" firstAttribute="centerY" secondItem="wTT-DJ-VVM" secondAttribute="centerY" id="I8W-SZ-Nd5"/>
+                            <constraint firstItem="ANT-E6-Cbx" firstAttribute="top" secondItem="4gh-M3-nb3" secondAttribute="bottom" constant="10" id="Isi-X3-6zX"/>
+                            <constraint firstItem="s8T-W1-R2i" firstAttribute="top" secondItem="Vu5-PH-GP5" secondAttribute="bottom" constant="10" id="KaC-kJ-hCA"/>
+                            <constraint firstItem="Dta-zK-dau" firstAttribute="top" secondItem="Vu5-PH-GP5" secondAttribute="bottom" constant="10" id="Q5B-ta-3VF"/>
+                            <constraint firstItem="4gh-M3-nb3" firstAttribute="top" secondItem="Dta-zK-dau" secondAttribute="bottom" constant="3" id="SFF-PW-VXL"/>
+                            <constraint firstItem="fjQ-cR-Zmb" firstAttribute="leading" secondItem="wTT-DJ-VVM" secondAttribute="leadingMargin" id="cDA-VK-Hcy"/>
+                            <constraint firstItem="Dta-zK-dau" firstAttribute="trailing" secondItem="wTT-DJ-VVM" secondAttribute="trailingMargin" id="cmU-4x-bW2"/>
+                            <constraint firstItem="fjQ-cR-Zmb" firstAttribute="trailing" secondItem="wTT-DJ-VVM" secondAttribute="trailingMargin" id="ecM-bp-Rh9"/>
+                            <constraint firstItem="fjQ-cR-Zmb" firstAttribute="top" secondItem="ANT-E6-Cbx" secondAttribute="bottom" constant="10" id="ftb-cz-wGc"/>
+                            <constraint firstItem="4gh-M3-nb3" firstAttribute="leading" secondItem="wTT-DJ-VVM" secondAttribute="leadingMargin" id="gb4-Se-Gac"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vzj-6V-7Qy" secondAttribute="trailing" constant="15" id="kXg-aG-h6V"/>
+                            <constraint firstItem="ANT-E6-Cbx" firstAttribute="leading" secondItem="wTT-DJ-VVM" secondAttribute="leadingMargin" constant="15" id="nVm-P3-byF"/>
+                            <constraint firstItem="47b-m4-Mgw" firstAttribute="top" secondItem="fjQ-cR-Zmb" secondAttribute="bottom" id="yAY-7X-Occ"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="closeXBTN" destination="Dta-zK-dau" id="kUO-ox-cXK"/>
+                        <outlet property="imagePreview" destination="4gh-M3-nb3" id="OFv-bI-nPu"/>
+                        <outlet property="selectImageBtn" destination="ANT-E6-Cbx" id="83m-8T-qe3"/>
+                        <outlet property="sendBtn" destination="Vzj-6V-7Qy" id="VTa-eF-9tt"/>
+                        <outlet property="userListTblv" destination="fjQ-cR-Zmb" id="dv8-55-vdU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EX2-HL-v1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="225"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="imagePlaceholder" width="1280" height="800"/>
+    </resources>
+</document>
